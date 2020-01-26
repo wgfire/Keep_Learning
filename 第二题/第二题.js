@@ -38,34 +38,43 @@ function tolistnode(arr) {
     return listnode;
 }
 var a = [1, 2, 3];
-var b = [2, 8, 5];
+var b = [2, 4, 5];
 var alistnode = tolistnode(a);
 var blistnode = tolistnode(b);
-function addTwoNumbers(l1, l2) {
-    if(l1 === null) return l2;
-    if(l2 === null) return l1;
-    let result = new ListNode(null);
-    head = result;
-    let flag = false; // 判断是否要进位
-    while(l1 !== null || l2 !== null || flag) {
-        let sum = 0;
-        sum = l1.val + l2.val;
+var addTwoNumbers = function (l1, l2) {
+    if (l1 === null)
+        return l2;
+    if (l2 === null)
+        return l1;
+    var result = new ListNode(null);
+    var head = result;
+    var flag = false; // 判断是否要进位
+    while (l1 !== null || l2 !== null || flag) {
+        var sum = 0;
+        if (l1 === null) {
+            sum = l2 ? l2.val : 0;
+        }
+        else if (l2 === null) {
+            sum = l1 ? l1.val : 0;
+        }
+        else {
+            sum = l1.val + l2.val;
+        }
         flag && (sum += 1) && (flag = false);
-        sum > 9 && (flag = true);// 为下一次加1
-        if(head.val === null) {
-            head.val = sum % 10;// 第一次设
-        } else {
-            head.next = new ListNode(sum % 10);// 当前的head.next 的实例是lisnode对象 可这个实例默认 next 属性=null，所以当遍历完之后 最后一个由于没有值了 最后一个next就是null 
+        sum > 9 && (flag = true); // 为下一次加1
+        if (head.val === null) {
+            head.val = sum % 10; // 第一次设
+        }
+        else {
+            head.next = new ListNode(sum % 10); // 当前的head.next 的实例是lisnode对象 可这个实例默认 next 属性=null，所以当遍历完之后 最后一个由于没有值了 最后一个next就是null 
             head = head.next;
         }
         l1 = l1 === null ? l1 : l1.next;
         l2 = l2 === null ? l2 : l2.next;
     }
     return result;
-}
-var resultNode = addTwoNumbers(alistnode, blistnode);
-console.log(resultNode);
-
+};
+/*
 // 第一次   1 ，2
 // head {val:null,next:null}-> {val:3,next:null}
 
@@ -74,3 +83,4 @@ console.log(resultNode);
 
 // 第三次  3,8 这时  8要加一变成9
 // {val:3,next:{val:0:next:{val:9,next:null}}}
+*/
