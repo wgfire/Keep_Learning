@@ -6,7 +6,7 @@ interface arraySort {
 
 }
 
-class arrObj implements arraySort {
+  class arrSort implements arraySort {
     public arr: Array<number>
     constructor(arr: Array<number>) {
         this.arr = arr
@@ -93,7 +93,7 @@ class arrObj implements arraySort {
 
 // test
 const testarr: number[] = [91, 60, 96, 7, 35, 65, 10, 65, 9, 30, 20, 31, 77, 81, 5];
-let testobj = new arrObj(testarr)
+let testobj = new arrSort(testarr)
 console.log(testobj.bubbleSortDouble(testarr));
 
 
