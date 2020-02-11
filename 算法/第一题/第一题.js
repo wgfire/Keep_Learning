@@ -7,7 +7,7 @@ var twoSums = function (nums, target) {
             result.push(i, endindex);
         }
     }
-    console.log('结果', result);
+   
 
 
     return result;
