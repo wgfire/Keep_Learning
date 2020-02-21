@@ -25,3 +25,5 @@ console.log(emai.match(/(30|36)/g)); // 36
 
 console.log(/^\d+@\w+\.?\w+$/.test(emai));
 
+// var a ={a:2}
+let b = Object.create(a)
