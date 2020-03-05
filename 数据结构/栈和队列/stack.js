@@ -9,15 +9,15 @@ var Stack = /** @class */ (function () {
         this.arr = [];
     }
     Stack.prototype.push = function (prop) {
-        this.arr.unshift(prop);
+        this.arr.push(prop);
         return this.arr;
     };
     Stack.prototype.shift = function () {
-        var deleteProp = this.arr.shift();
+        var deleteProp = this.arr.pop();
         return deleteProp;
     };
     Stack.prototype.peek = function () {
-        return this.arr[0]; // 返回栈顶元素
+        return this.arr[this.arr.length-1]; // 返回栈顶元素
     };
     Stack.prototype.getLenght = function () {
         var length = this.arr.length;
