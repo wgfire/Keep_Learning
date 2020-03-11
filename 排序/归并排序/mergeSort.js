@@ -30,28 +30,26 @@ console.log(mergeSort(mergearr));
 
 
 
+function megerSort(arr) {
 
-function mergsort2(arr) {
-    let leng = arr.length
-
-    if (leng < 2) {
-        return arr;
+    let length = arr.length
+    if (length < 2) {
+        return arr
     }
-
-    let mind = Math.floor(leng / 2);
+    let mind = Math.floor(length / 2)
     let left = arr.splice(0, mind)
     let right = arr
-
-    return merge2(mergsort2(left), mergsort2(right))
+    let result = meger(megerSort(left), megerSort(right))
+    return result
 
 }
 
-function merge2(left, right) {
+function meger(left, right) {
     let result = []
 
     while (left.length > 0 && right.length > 0) {
-        result.push(left[0] <= right[0] ? left.shift() : right.shift())
+        result.push(left[0] <= right[0] ? left.shift() : right.shift());
     }
-    return result.concat(left, right)
 
+    return result.concat(left, right)
 }
