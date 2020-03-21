@@ -110,3 +110,41 @@
 
   pull();
 }
+let i =0
+const testPromise = () => {
+  return new Promise((resolve, reject) => {
+     setTimeout(() => {
+       resolve(i++)
+     }, 1000);
+  })
+}
+function* Gen (p){
+   yield testPromise() // 暂停 将执行权给协程  协程将log函数执行完后 返回 log的执行结果
+   yield testPromise()
+  return  yield testPromise()
+}
+
+let g = Gen(1)
+function run() {
+const next= function (value) {
+  let res = g.next(value)
+  if(!res.done){
+    res.value.then(value=>{
+      console.log('tag', value);
+      next(value)
+    })
+  }else{
+    return res.value 
+  }
+  
+}
+next(1)
+
+}
+run()
+// g.next().value.then(value=>{
+//   console.log('tag', value)
+//    g.next(value).value.then(value=>{
+//     console.log('tag', value)
+//    })
+// })
