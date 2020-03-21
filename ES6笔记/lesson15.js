@@ -12,6 +12,10 @@
   console.log(k.next());
   console.log(k.next());
   console.log(k.next());
+  for (let value of tell()){ // 生成器本身也是一个迭代器
+    console.log(value);
+    
+  }
 }
 
 {
@@ -142,9 +146,9 @@ next(1)
 
 }
 run()
-// g.next().value.then(value=>{
-//   console.log('tag', value)
-//    g.next(value).value.then(value=>{
-//     console.log('tag', value)
-//    })
-// })
+g.next().value.then(value=>{
+  console.log('tag', value)
+   g.next(value).value.then(value=>{
+    console.log('tag', value)
+   })
+})
