@@ -29,5 +29,6 @@
     "eslint-plugin-jest": "22.0.0",
     "jest": "23.6.0",
     "regenerator-runtime": "0.12.1"
-  }
+  },
+  "devDependencies": {}
 }
