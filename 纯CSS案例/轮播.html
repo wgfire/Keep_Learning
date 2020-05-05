@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="container">
+		
+			<div data-am-gallery="3 next-prev-navigation">
+		
+				<!-- Radio -->
+				<input type="radio" name="gallery" id="img-1" checked />
+				<input type="radio" name="gallery" id="img-2" />
+				<input type="radio" name="gallery" id="img-3" />
+		
+				<!-- Images -->
+				<div class="images">
+					<div class="image" style="background-image: url(https://images.unsplash.com/photo-1460500063983-994d4c27756c?crop=entropy&fit=crop&fm=jpg&h=1325&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2550);">
+						<!-- Add content to images (sample) -->
+						<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: white; font-family: sans-serif; text-align: center; text-shadow: 0 0 20px rgba(0,0,0,0.5);">
+							<h1 style="margin-top: 0; margin-bottom: 0.8vw; font-size: 5vw; font-weight: bold;">Pure CSS Fadeshow</h1>
+							<p style="font-size: 2vw; font-weight: 100; margin-top: 0;">Easy to implement and use on <strong>your</strong> site!</p>
+						</div>
+					</div>
+					<div class="image" style="background-image: url(https://images.unsplash.com/photo-1440557653082-e8e186733eeb?crop=entropy&fit=crop&fm=jpg&h=1325&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2500);"></div>
+					<div class="image" style="background-image: url(https://images.unsplash.com/photo-1449057528837-7ca097b3520c?crop=entropy&fit=crop&fm=jpg&h=1325&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=2500);"></div>
+				</div>
+		
+				<!-- Navigation -->
+				<div class="navigation">
+					<label class="dot" for="img-1"></label>
+					<label class="dot" for="img-2"></label>
+					<label class="dot" for="img-3"></label>
+				</div>
+		
+				<!-- Prev next navigation -->
+				<div class="prev-container">
+					<label class="prev" for="img-1"></label>
+					<label class="prev" for="img-2"></label>
+					<label class="prev" for="img-3"></label>
+				</div>
+				<div class="next-container">
+					<label class="next" for="img-1"></label>
+					<label class="next" for="img-2"></label>
+					<label class="next" for="img-3"></label>
+				</div>
+		
+			</div>
+		
+		</div>
+	</body>
+</html>
+<style type="text/css">
+
+	[data-am-gallery] {
+	  position: relative;
+	  width: 100%;
+	  height: 100%;
+	  background-color: #fff;
+	  /* Dot Navigation */
+	  /* Next/Prev Navigation */
+	}
+	[data-am-gallery] .image {
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  opacity: 0;
+	  -webkit-transition: opacity 1000ms ease;
+	  transition: opacity 1000ms ease;
+	  background-size: cover;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	}
+	[data-am-gallery] input[type="radio"] {
+	  position: fixed;
+	  top: -9999px;
+	}
+	[data-am-gallery] input[type="radio"]:checked {
+	  /* This loop handles the image switching and dot active state */
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(5) ~ .images .image:nth-child(5) {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(5) ~ .navigation .dot:nth-child(5) {
+	  background-color: coral;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(5) ~ .navigation .dot:nth-child(5):hover {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(4) ~ .images .image:nth-child(4) {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(4) ~ .navigation .dot:nth-child(4) {
+	  background-color: coral;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(4) ~ .navigation .dot:nth-child(4):hover {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(3) ~ .images .image:nth-child(3) {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(3) ~ .navigation .dot:nth-child(3) {
+	  background-color: coral;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(3) ~ .navigation .dot:nth-child(3):hover {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(2) ~ .images .image:nth-child(2) {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(2) ~ .navigation .dot:nth-child(2) {
+	  background-color: coral;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(2) ~ .navigation .dot:nth-child(2):hover {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(1) ~ .images .image:nth-child(1) {
+	  opacity: 1;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(1) ~ .navigation .dot:nth-child(1) {
+	  background-color: coral;
+	}
+	[data-am-gallery] input[type="radio"]:checked:nth-child(1) ~ .navigation .dot:nth-child(1):hover {
+	  opacity: 1;
+	}
+	[data-am-gallery] .navigation {
+	  position: absolute;
+	  bottom: 15px;
+	  left: 50%;
+	  -webkit-transform: translateX(-50%);
+	          transform: translateX(-50%);
+	}
+	[data-am-gallery] .dot {
+	  display: inline-block;
+	  width: 15px;
+	  height: 15px;
+	  margin: 0 2px;
+	  border-radius: 50%;
+	  background-color: rgba(255, 255, 255, 0.8);
+	  cursor: pointer;
+	  -webkit-transition: opacity 200ms ease;
+	  transition: opacity 200ms ease;
+	}
+	[data-am-gallery] .dot:hover {
+	  opacity: 0.8;
+	}
+	[data-am-gallery] .prev, [data-am-gallery] .next {
+	  position: absolute;
+	  display: none;
+	  top: 0;
+	  bottom: 0;
+	  width: 100px;
+	  cursor: pointer;
+	  -webkit-transition: all 200ms ease;
+	  transition: all 200ms ease;
+	  font-family: sans-serif;
+	}
+	[data-am-gallery] .prev:before, [data-am-gallery] .next:before {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  -webkit-transform: translate(-50%, -50%);
+	          transform: translate(-50%, -50%);
+	  font-size: 3vw;
+	  color: rgba(255, 255, 255, 0.5);
+	}
+	[data-am-gallery] .prev:hover, [data-am-gallery] .next:hover {
+	  background-color: rgba(255, 255, 255, 0.1);
+	}
+	[data-am-gallery] .prev {
+	  left: 0;
+	  -webkit-transform: translateX(-100%);
+	          transform: translateX(-100%);
+	}
+	[data-am-gallery] .prev:before {
+	  content: "<";
+	}
+	[data-am-gallery] .next {
+	  right: 0;
+	  -webkit-transform: translateX(100%);
+	          transform: translateX(100%);
+	}
+	[data-am-gallery] .next:before {
+	  content: ">";
+	}
+	[data-am-gallery]:hover .prev {
+	  -webkit-transform: translateX(0);
+	          transform: translateX(0);
+	}
+	[data-am-gallery]:hover .next {
+	  -webkit-transform: translateX(0);
+	          transform: translateX(0);
+	}
+	
+	
+	
+	
+	
+	[data-am-gallery~="3"] input[type="radio"]:nth-child(5),
+	[data-am-gallery~="3"] .navigation .dot:nth-child(5),
+	[data-am-gallery~="3"] .image:nth-child(5) {
+	  display: none !important;
+	}
+	[data-am-gallery~="3"] input[type="radio"]:nth-child(4),
+	[data-am-gallery~="3"] .navigation .dot:nth-child(4),
+	[data-am-gallery~="3"] .image:nth-child(4) {
+	  display: none !important;
+	}
+	[data-am-gallery~="3"][data-am-gallery~="next-prev-navigation"] input[type="radio"]:checked:nth-child(3) ~ .prev-container .prev:nth-child(2) {
+	  display: block;
+	}
+	[data-am-gallery~="3"][data-am-gallery~="next-prev-navigation"] input[type="radio"]:checked:nth-child(3) ~ .next-container .next:nth-child(1) {
+	  display: block;
+	}
+	[data-am-gallery~="3"][data-am-gallery~="next-prev-navigation"] input[type="radio"]:checked:nth-child(2) ~ .prev-container .prev:nth-child(1) {
+	  display: block;
+	}
+	[data-am-gallery~="3"][data-am-gallery~="next-prev-navigation"] input[type="radio"]:checked:nth-child(2) ~ .next-container .next:nth-child(3) {
+	  display: block;
+	}
+	[data-am-gallery~="3"][data-am-gallery~="next-prev-navigation"] input[type="radio"]:checked:nth-child(1) ~ .prev-container .prev:nth-child(3) {
+	  display: block;
+	}
+	[data-am-gallery~="3"][data-am-gallery~="next-prev-navigation"] input[type="radio"]:checked:nth-child(1) ~ .next-container .next:nth-child(2) {
+	  display: block;
+	}
+	
+
+	
+	[data-am-gallery~="1"] .navigation {
+	  display: none;
+	}
+	
+	/* Base Styling */
+	body {
+	  margin: 0;
+	}
+	
+	.container {
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	  overflow: hidden;
+	}
+
+</style>
