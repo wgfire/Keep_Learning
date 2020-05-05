@@ -39,3 +39,22 @@ var preorderTraversal = function(root: treeNode): any {
 };
 
 preorderTraversal(trees);
+
+
+/**迭代法 */
+
+function whilepreorder(root:treeNode) {
+    let res = []
+    let stack:Array<treeNode> = [root]  // 模拟一个栈道 记录节点的左子树 和右子树  然后循环遍历这个栈道 ，遍历的过程中又会添加新的节点
+     while (stack.length>0){
+        let node = stack.pop();
+         node && res.push(node!.val)
+         node && node.right&& stack.push(node.right)
+         node && node.left&& stack.push(node.left)
+
+     }
+     return res
+    
+}
+
+console.log('while', whilepreorder(trees))
