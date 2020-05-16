@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div class="progress">
+			<div class="progress-done"></div>
+		</div>
+	</body>
+	<style>
+		.progress {
+		    background-color: rgba(100, 100, 100, 0.2);
+		    border-radius: 5px;
+		    position: relative;
+		    margin: 0 10px;
+		    height: 10px;
+		    width: 200px;
+			}
+		.progress-done {
+			    background: linear-gradient(to left, rgb(242, 112, 156), rgb(255, 148, 114));
+			    box-shadow: 0 3px 3px -5px rgb(242, 112, 156), 0 2px 5px rgb(242, 112, 156);
+			    border-radius: 5px;
+			    height: 10px;
+			    width: 0px;
+			
+			   
+		}
+	</style>
+</html>
+
+<script>
+/*transition: width 1s ease 0.3s*/
+	let total = 250 
+	let current = 0
+	let width = 200
+
+	let dom = document.querySelector('.progress')
+	let dom2 = document.querySelector('.progress-done')
+
+	
+	 let time = setInterval(function(){
+		current+=1
+	 	let currentWidth =window.getComputedStyle(dom2).width || '0px'
+	 	let offert = (current/total)*200
+	    dom2.style.width = offert+'px'
+	 	dom2.animate({
+			width:[currentWidth,`${offert}px`]
+		},{
+			duration: 100,
+			easing:'linear'
+		})
+		console.log(Math.floor(currentWidth.replace('px','')));
+		if(Math.ceil(currentWidth.replace('px',''))>=width){
+		
+			clearInterval(time)
+		}
+	 },100)
+	
+	
+</script>
