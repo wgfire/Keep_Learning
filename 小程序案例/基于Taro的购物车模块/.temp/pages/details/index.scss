@@ -1,0 +1,34 @@
+@import "~taro-ui/dist/style/components/fab.scss";
+.eimg {
+  width: 100%;
+  min-height: 500px;
+}
+
+.edesc {
+  font-size: 32px;
+  font-family: fantasy;
+  line-height: 40px;
+  padding: 10px;
+
+}
+
+.etsc {
+  font-size: 26px;
+  font-family: fantasy;
+  color: gray;
+  padding: 10px;
+}
+
+.eprice {
+    font-size: 38px;
+    color: crimson;
+}
+.at-fab__icon{
+    font-size: 32px;
+}
+.at-fab{
+    align-items: start;
+    position: fixed;
+    right: 20px;
+    background: crimson;
+}

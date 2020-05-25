@@ -1,0 +1,23 @@
+<block wx:if="{{$taroCompReady}}">
+    <block>
+        <block wx:if="{{shopData['desc']}}">
+            <view>
+                <image class="eimg" src="{{shopData.imgsrc}}"></image>
+                <view class="edesc texthidden">{{shopData.desc}}</view>
+                <view class="etsc">{{shopData.desc}}</view>
+                <view class="sharp">
+                    <view class="eprice">￥{{shopData.price + "-" + shopData.price * 10}}</view>
+                    <at-fab><text class="at-fab__icon" size="normal" bindtap="anonymousFunc0">分享</text>
+                    </at-fab>
+                </view>
+                <block wx:if="{{isopen}}">
+                    <share compid="{{$compid__10}}"></share>
+                </block>
+                <tab-bar></tab-bar>
+            </view>
+        </block>
+        <block wx:else>
+            <view>请点击购物车里的图片进入</view>
+        </block>
+    </block>
+</block>

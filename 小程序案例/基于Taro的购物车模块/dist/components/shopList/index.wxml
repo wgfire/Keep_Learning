@@ -1,0 +1,30 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="shopList">
+        <block>
+            <block wx:if="{{props.checkboxOption[0]}}">
+                <view class="head" bindtap="anonymousFunc0">
+                    <view class="{{anonymousState__temp}}"></view><text class="typeName">{{props.checkboxOption[0].label}}</text>
+                </view>
+            </block>
+            <block wx:else><text>暂无数据</text>
+            </block>
+        </block>
+        <view class="content">
+            <view class="content_item" wx:key="value" wx:for="{{loopArray4}}" wx:for-item="el" wx:for-index="__index1">
+                <view class="item_left">
+                    <view bindtap="anonymousFunc1" class="{{el.$loopState__temp3}}" data-e-tap-so="this" data-e-tap-a-a="{{el._$indexKey}}"></view>
+                    <image class="img" src="{{el.$original.imgsrc}}" bindtap="anonymousFunc2" data-e-tap-so="this" data-e-tap-a-a="{{el._$indexKey2}}"></image>
+                </view>
+                <view class="item_right">
+                    <view><text class="desc">{{el.$original.desc}}</text><text class="desc tsc">{{el.$original.desc}}</text>
+                        <view class="item_footer"><text class="price">￥{{el.$original.price}}</text>
+                            <view class="oprtion">
+                                <at-input-number compid="{{el.$compid__12}}"></at-input-number>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

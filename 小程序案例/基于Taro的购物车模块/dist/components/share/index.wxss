@@ -1,0 +1,1 @@
+.canvas-wrap,.index{display:flex;align-items:center;justify-content:center;height:100%}.canvas-wrap{width:100%;background:rgba(0,0,0,.3);position:fixed;top:0;left:0;flex-direction:column}.canvas-wrap .btn-save{margin-top:40rpx}

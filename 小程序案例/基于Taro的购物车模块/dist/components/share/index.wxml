@@ -1,0 +1,8 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="index">
+        <view class="canvas-wrap">
+            <canvas id="card-canvas" class="card-canvas" style="width: 320px; height: 450px" canvas-id="cardCanvas"></canvas>
+            <button bindtap="saveCard" class="btn-save" type="primary" size="mini">保存到相册</button>
+        </view>
+    </view>
+</block>

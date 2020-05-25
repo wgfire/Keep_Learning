@@ -1,0 +1,30 @@
+<block wx:if="{{$taroCompReady}}">
+    <view class="index">
+        <scroll-view class="scrollview" scroll-y="{{true}}" scroll-with-animation="{{true}}" scroll-top="{{scrollTop}}" style="{{anonymousState__temp}}" lower-threshold="{{Threshold}}" upper-threshold="{{Threshold}}">
+            <view class="text_right" bindtap="anonymousFunc0">{{type ? "编辑" : "完成"}}</view>
+            <block>
+                <block wx:if="{{checkData.length > 0}}">
+                    <shop-list wx:for="{{loopArray3}}" wx:for-item="el" wx:for-index="index" compid="{{el.$compid__8}}"></shop-list>
+                </block>
+                <block wx:else>
+                    <view>购物车里都是空的哦</view>
+                </block>
+            </block>
+            <view class="footer">
+                <view class="footer_left">
+                    <view bindtap="anonymousFunc1" class="{{anonymousState__temp2}}"></view>全选</view>
+                <view class="footer_right">
+                    <block>
+                        <block wx:if="{{type}}"><text>总计<text class="count">￥ {{count}}</text></text>
+                        </block>
+                        <block wx:else><text>已勾选<text class="count"> {{shopdata.length}}</text></text>
+                        </block>
+                    </block>
+                    <view class="btn" bindtap="anonymousFunc2">{{type ? "结算" : "删除"}}</view>
+                    <at-toast compid="{{$compid__9}}"></at-toast>
+                </view>
+            </view>
+        </scroll-view>
+        <tab-bar></tab-bar>
+    </view>
+</block>

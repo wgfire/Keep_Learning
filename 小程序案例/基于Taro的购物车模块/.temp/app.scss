@@ -1,0 +1,11 @@
+@import "~taro-ui/dist/style/index.scss"; // 引入组件样式，仅需引入一次即可
+@import "~taro-ui/dist/style/components/icon.scss";
+@import "~taro-ui/dist/style/components/avatar.scss";
+
+.texthidden {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}

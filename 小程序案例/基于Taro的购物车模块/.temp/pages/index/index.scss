@@ -1,0 +1,51 @@
+@import "~taro-ui/dist/style/components/toast.scss";
+.index {
+  font-size: 16px;
+}
+.selectIcon {
+  color: #af4225;
+}
+.at-icon {
+  font-size: 0.7rem;
+  vertical-align: text-bottom;
+  margin-right: 20px;
+  vertical-align: text-bottom;
+}
+.text_right {
+  text-align: right;
+  padding: 10px;
+  border-bottom: solid 1px #ece5e5;
+}
+.footer {
+  position: fixed;
+  bottom: 41PX;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 1.70667rem;
+  background: #f9f5f5;
+  font-size: 0.6rem;
+
+}
+.footer_left {
+    padding-left: 8PX;;
+}
+.footer_right {
+  flex: 0 0 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.btn {
+  width: 170px;
+  background: #af4225;
+  text-align: center;
+  border-radius: 50px;
+  height: 50px;
+  color: white;
+  line-height: 50px;
+}
+.count {
+  color: #af4225;
+  font-size: 20px;
+}
