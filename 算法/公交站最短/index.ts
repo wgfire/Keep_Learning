@@ -27,4 +27,4 @@ function distanceBetweenBusStops(distance: number[], start: number, destination:
   return Math.min(s, total - s);
 }
 
-// 解题思路，车站点围起来一个圈 给定圈的起点和终点，求这两个点直接的距离。然后吧总的车站长度减去这两点直接的距离，得到逆时针走的距离，最后比较顺时针和逆时针哪个小
+// 解题思路，车站点围起来一个圈 给定圈的起点和终点，求这两个点直接的距离（顺时针）。然后吧总的车站长度减去这两点直接的距离，得到逆时针走的距离，最后比较顺时针和逆时针哪个小
