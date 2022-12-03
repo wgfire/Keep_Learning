@@ -1,16 +1,16 @@
-var node = /** @class */ (function () {
-    function node(key) {
+"use strict";
+class node {
+    constructor(key) {
         this.next = null;
         this.key = key;
     }
-    return node;
-}());
-var listNode = /** @class */ (function () {
-    function listNode(key) {
+}
+class listNode {
+    constructor(key) {
         this.length = 0;
         this.headNode = new node(key);
     }
-    listNode.prototype.insertNode = function (node) {
+    insertNode(node) {
         if (this.headNode.key != null) {
             // 说明headnode 下已经有节点
             node.next = this.headNode;
@@ -22,16 +22,15 @@ var listNode = /** @class */ (function () {
             console.log('tag', 'null');
         }
         this.headNode = node;
-    };
-    listNode.prototype.getNode = function () {
+    }
+    getNode() {
         return this.headNode;
-    };
-    return listNode;
-}());
+    }
+}
 // 初始化一个单向链表，表头应该是null
-var listnode = new listNode(null);
-var insetnode1 = new node(1);
-var insetnode2 = new node(2);
+let listnode = new listNode(null);
+let insetnode1 = new node(1);
+let insetnode2 = new node(2);
 listnode.insertNode(insetnode1);
 listnode.insertNode(insetnode2);
 console.log(listnode.getNode());

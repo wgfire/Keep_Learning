@@ -1,26 +1,25 @@
-
-var LUR = /** @class */ (function () {
-    function LUR(max) {
+"use strict";
+class LUR {
+    constructor(max) {
         this.max = max;
         this.cache = new Map();
     }
-    LUR.prototype.add = function (key, value) {
-        var cache = this.cache;
+    add(key, value) {
+        const { cache } = this;
         if (cache.size > this.max - 1) {
-            var keys = cache.keys().next().value;
-            cache["delete"](keys);
+            const keys = cache.keys().next().value;
+            cache.delete(keys);
         }
         cache.set(key, value);
-    };
-    LUR.prototype.get = function (key) {
-        var Kvalue = 0;
-        var cache = this.cache;
+    }
+    get(key) {
+        let Kvalue = 0;
+        const { cache } = this;
         Kvalue = cache.get(key);
         if (!Kvalue)
             return false;
-        cache["delete"](key);
+        cache.delete(key);
         cache.set(key, Kvalue);
         return Kvalue;
-    };
-    return LUR;
-}());
+    }
+}

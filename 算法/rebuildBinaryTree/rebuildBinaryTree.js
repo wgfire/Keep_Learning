@@ -1,3 +1,4 @@
+"use strict";
 /** 剑指offer 重建二叉树 */
 /**输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。
  * 假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
@@ -12,16 +13,15 @@
  * 之后，递归构建左右子树
  */
 /** 新建一个class 模拟一个数 */
-var TreeNode = /** @class */ (function () {
-    function TreeNode(value) {
+class TreeNode {
+    constructor(value) {
         this.left = null;
         this.right = null;
         this.value = value;
         this.left = [];
         this.right = [];
     }
-    return TreeNode;
-}());
+}
 function rebuildBinaryTree(preOrder, minOrder) {
     // write code here
     if (preOrder.length == 0 || minOrder.length == 0) {
@@ -41,9 +41,9 @@ var min = [4, 7, 2, 1, 5, 3, 8, 6];
 var tree = rebuildBinaryTree(pre, min);
 function preOrder(node) {
     if (node != null) {
-        console.log(node);
-        preOrder(node.left)
-        preOrder(node.right)
+        console.log(node.value);
+        preOrder(node.left);
+        //preOrder(node.right);
     }
 }
 preOrder(tree);

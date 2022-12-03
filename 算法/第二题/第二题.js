@@ -1,3 +1,4 @@
+"use strict";
 /*
 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
 
@@ -14,43 +15,42 @@
  *
  * 这道题 JS 中输入的是 数组，而不是链表 所以为了在其他地方能运行  先把数组转换为链表结构 在相加
  */
-var ListNode = /** @class */ (function () {
-    function ListNode(val) {
+class ListNode {
+    constructor(val) {
         this.val = val;
         this.next = null;
     }
-    return ListNode;
-}());
+}
 function tolistnode(arr) {
-    var listnode = new ListNode(null);
-    var head = listnode;
-    arr.forEach(function (el) {
+    let listnode = new ListNode(null);
+    let head = listnode;
+    arr.forEach(el => {
         // 链表头 要设置val
         if (head.val === null) {
             head.val = el;
             return;
         }
-        var node = new ListNode(el);
+        let node = new ListNode(el);
         head.next = node;
         head = node; // 
         // 一开始是吧head 保存了 alistnode 然后每层循环去改变head
     });
     return listnode;
 }
-var a = [1, 2, 3];
-var b = [2, 4, 5];
-var alistnode = tolistnode(a);
-var blistnode = tolistnode(b);
+let a = [1, 2, 3];
+let b = [2, 4, 5];
+let alistnode = tolistnode(a);
+let blistnode = tolistnode(b);
 var addTwoNumbers = function (l1, l2) {
     if (l1 === null)
         return l2;
     if (l2 === null)
         return l1;
-    var result = new ListNode(null);
-    var head = result;
-    var flag = false; // 判断是否要进位
+    let result = new ListNode(null);
+    let head = result;
+    let flag = false; // 判断是否要进位
     while (l1 !== null || l2 !== null || flag) {
-        var sum = 0;
+        let sum = 0;
         if (l1 === null) {
             sum = l2 ? l2.val : 0;
         }

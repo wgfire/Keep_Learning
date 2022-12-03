@@ -1,11 +1,12 @@
+"use strict";
 /**
  * 因为二维数组排序方式是特别的，从左到右从上到下依次递增，因此采取从左下角或者右上角作为起点去排查
  * 每一次排查至少可以去掉一列或者一行或者直接找到元素
  */
 function findInMatrix(target, array) {
-    var falg = false;
-    var currentRow = array.length - 1;
-    var currentCol = 0;
+    let falg = false;
+    let currentRow = array.length - 1;
+    let currentCol = 0;
     while (currentRow >= 0 && currentCol <= array[0].length - 1 && !falg) {
         if (target > array[currentRow][currentCol]) {
             currentCol++;
@@ -16,9 +17,9 @@ function findInMatrix(target, array) {
         else {
             falg = true; //找到目标
         }
-        
+        console.log('c', currentCol);
     }
     return falg;
 }
-var maxarr = [[1, 2, 3], [4, 5, 6]];
-console.log(findInMatrix(15,[[1,2,8,9],[2,4,9,12],[4,7,10,13],[6,8,11,15]]));
+let maxarr = [[1, 2, 3], [4, 5, 6]];
+console.log(findInMatrix(5, [[1, 2, 8, 9], [2, 4, 9, 12], [4, 7, 10, 13], [6, 8, 11, 15]]));
