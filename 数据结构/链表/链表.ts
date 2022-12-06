@@ -22,7 +22,7 @@ class node {
   }
 }
 
-class ListNode {
+export class ListNode {
   headNode: node;
   length: number = 0;
   constructor(key: any) {
