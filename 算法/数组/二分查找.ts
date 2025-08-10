@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * @lc app=leetcode.cn id=704 lang=javascript
  * @lcpr version=21105
@@ -26,3 +27,6 @@ var search = function (nums: number[], target: number) {
 // @lcpr case=end
 
  */
+=======
+/* */
+>>>>>>> 408fa88 (新增提示词)

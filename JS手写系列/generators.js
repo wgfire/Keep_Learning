@@ -56,7 +56,7 @@ var gen = function* () {
 function run(fn) {
   var gen = fn();
 
-  function next(err, data) {
+  function next(data) {
     var result = gen.next(data);
     console.log(result, "result");
     if (result.done) return;
